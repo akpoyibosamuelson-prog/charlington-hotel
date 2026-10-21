@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Charlington Hotel & Suites is a luxury hotel, restaurant, and event venue with secure parking, dependable power, and guest-friendly policies." />
-  <title>Charlington Hotel & Suites | Luxury Stay • Dining • Events</title>
+  <meta name="description" content="Charlington Hotel & Suites offers luxury rooms, dining, secure facilities, events and guest-first customer support." />
+  <title>Charlington Hotel & Suites | Stay • Dine • Celebrate</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -25,7 +25,7 @@
       </span>
     </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
 
     <nav class="nav" id="nav">
       <a href="#rooms">Rooms</a>
@@ -42,7 +42,7 @@
       <div class="hero-inner">
         <p class="eyebrow">WELCOME TO CHARLINGTON</p>
         <h1>Stay in refined<br><span>comfort.</span></h1>
-        <p class="hero-copy">A luxury destination for restful stays, great dining, and celebrations designed around your every need.</p>
+        <p class="hero-copy">A luxury destination for restful stays, elevated dining, and memorable celebrations designed around your every need.</p>
         <div class="hero-actions">
           <a href="#booking" class="btn primary-btn">Plan your visit</a>
           <a href="#dining" class="btn ghost-btn">Explore dining</a>
@@ -67,7 +67,7 @@
 
       <form id="bookingForm">
         <label>
-          I’m interested in
+          I'm interested in
           <select id="bookingType">
             <option>Room reservation</option>
             <option>Food or drink order</option>
@@ -110,6 +110,41 @@
       </div>
     </section>
 
+    <section class="section operations" id="operations">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">HOTEL OPERATIONS</p>
+          <h2>Built to support staff and improve guest service.</h2>
+        </div>
+      </div>
+
+      <div class="ops-grid">
+        <article class="op-card">
+          <div class="op-icon">01</div>
+          <h3>Record customer details</h3>
+          <p>Store guest names, contact information, booking preferences and visit history in one organised place.</p>
+        </article>
+
+        <article class="op-card">
+          <div class="op-icon">02</div>
+          <h3>Track reservations</h3>
+          <p>Monitor room bookings, event schedules and guest arrivals with clear visibility across the property.</p>
+        </article>
+
+        <article class="op-card">
+          <div class="op-icon">03</div>
+          <h3>Identify unpaid bookings</h3>
+          <p>Flag pending balances, incomplete payments and outstanding reservations before check-in or event delivery.</p>
+        </article>
+
+        <article class="op-card">
+          <div class="op-icon">04</div>
+          <h3>Follow up with customers</h3>
+          <p>Send reminders, confirmations and follow-up messages to stay connected and improve guest retention.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="section" id="rooms">
       <div class="section-heading">
         <div>
@@ -124,7 +159,7 @@
           <div class="card-image room"></div>
           <div class="card-body">
             <h3>Deluxe Rooms</h3>
-            <p>Thoughtful layouts, elegant design, premium bedding and a restful atmosphere for every guest.</p>
+            <p>Thoughtful space, elegant finishes and restful comfort for both business and leisure stays.</p>
             <div class="card-meta">
               <span>From ₦45,000</span>
               <a href="#booking" data-type="Room reservation">Reserve ↗</a>
@@ -148,7 +183,7 @@
           <div class="card-image events"></div>
           <div class="card-body">
             <h3>Events &amp; Halls</h3>
-            <p>Elegant spaces for weddings, ceremonies, meetings, birthday celebrations and private gatherings.</p>
+            <p>Elegant spaces for weddings, conferences, birthdays, meetings and unforgettable events.</p>
             <div class="card-meta">
               <span>Private halls</span>
               <a href="#booking" data-type="Hall or event booking">Enquire ↗</a>
@@ -191,7 +226,7 @@
 
         <article class="review-card">
           <div class="stars">★★★★★</div>
-          <p>“We hosted a small celebration here and everything felt premium, smooth and beautifully organized.”</p>
+          <p>“We hosted a small celebration here and everything felt premium, smooth and beautifully organised.”</p>
           <strong>— Daniel K.</strong>
         </article>
 
@@ -220,7 +255,7 @@
 
         <div class="policy-card">
           <h3>Payment Methods</h3>
-          <p>Cash, bank transfer, mobile money, and selected card payments accepted.</p>
+          <p>Cash, bank transfer, mobile money and selected card payments accepted.</p>
         </div>
 
         <div class="policy-card">
@@ -283,7 +318,7 @@
     </div>
   </footer>
 
-  <button id="faqToggle" class="faq-toggle">Need help?</button>
+  <button id="faqToggle" class="faq-toggle" aria-label="Open help chat">Need help?</button>
 
   <div class="chat-widget" id="chatWidget" aria-live="polite" aria-hidden="true">
     <div class="chat-header">

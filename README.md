@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn about Charlington Hotel & Suites, our story, guest-first hospitality and service standards." />
   <title>About Us | Charlington Hotel & Suites</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -48,7 +49,7 @@
       <div>
         <p class="eyebrow">OUR STORY</p>
         <h2>Built to make every guest feel at home.</h2>
-        <p>Charlington Hotel &amp; Suites was created to offer more than a place to sleep. It was built around a simple idea: every guest should feel welcomed, cared for and confident that their stay is in good hands. From the beginning, we focused on affordable comfort, professional service, and warm hospitality that leaves a lasting impression.</p>
+        <p>Charlington Hotel &amp; Suites was created to offer more than a place to sleep. It was built around a simple idea: every guest should feel welcomed, cared for and confident that their stay is in good hands. From the beginning, we focused on affordable comfort, professional service and warm hospitality that leaves a lasting impression.</p>
         <p>Today, the hotel stands as a place where guests rest comfortably, staff serve with pride, and families, business travellers and event hosts all find the right environment for their needs. We are committed to making each experience smooth, calm and memorable.</p>
       </div>
 
