@@ -1,0 +1,156 @@
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const toggle = document.getElementById('menuToggle');
+const nav = document.getElementById('nav');
+
+if (toggle && nav) {
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+  });
+}
+
+const dateInput = document.getElementById('bookingDate');
+if (dateInput) {
+  const now = new Date();
+  const local = new Date(now.getTime() - now.getTimezoneOffset() * 60000);
+  dateInput.min = local.toISOString().slice(0, 10);
+}
+
+const bookingForm = document.getElementById('bookingForm');
+if (bookingForm) {
+  bookingForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const guestName = document.getElementById('guestName').value.trim();
+    const type = document.getElementById('bookingType').value;
+    const preferredDate = dateInput ? (dateInput.value || 'Not specified') : 'Not specified';
+
+    if (!guestName) {
+      alert('Please enter your name.');
+      return;
+    }
+
+    const message = `Hello Charlington Hotel & Suites,\n\nMy name is ${guestName}.\nI would like to enquire about: ${type}.\nPreferred date: ${preferredDate}.\n\nPlease let me know availability, pricing and next steps.`;
+
+    window.open(`https://wa.me/2348000000000?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+  });
+}
+
+document.querySelectorAll('[data-type]').forEach((el) => {
+  el.addEventListener('click', () => {
+    const select = document.getElementById('bookingType');
+    if (select) {
+      select.value = el.dataset.type;
+    }
+  });
+});
+
+const faqToggle = document.getElementById('faqToggle');
+const chatWidget = document.getElementById('chatWidget');
+const chatClose = document.getElementById('chatClose');
+const chatInput = document.getElementById('chatInput');
+const sendBtn = document.getElementById('sendBtn');
+const supportBtn = document.getElementById('supportBtn');
+const chatBody = document.getElementById('chatBody');
+
+const faqDatabase = {
+  room: 'We offer comfortable rooms and suites with premium amenities. You can ask about availability, rates, and room types.',
+  reservation: 'You can reserve a room or event space by sending an enquiry through this website. We will confirm availability and next steps.',
+  dining: 'Yes, we offer dining and drinks. You can enquire about meals, snacks, and special food requests.',
+  event: 'We host meetings, parties, celebrations and special events. Tell us your preferred date and event type.',
+  pricing: 'Room rates and package details vary by date and room category. Please send an enquiry for the most accurate pricing.',
+  contact: 'You can reach customer service through WhatsApp, phone, or email from the contact section.',
+  hours: 'Our team is available to assist with enquiries and reservation support. For urgent matters, customer service can help immediately.',
+  refund: 'Refund and payment-related items usually require direct review by a customer service representative.',
+  checkin: 'Check-in details depend on your booking. Please contact customer service for confirmation.'
+};
+
+function addMessage(text, type = 'bot') {
+  const msg = document.createElement('div');
+  msg.className = type === 'user' ? 'user-msg' : 'bot-msg';
+  msg.textContent = text;
+  chatBody.appendChild(msg);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function getFaqAnswer(question) {
+  const q = question.toLowerCase();
+
+  if (q.includes('room') || q.includes('suite') || q.includes('stay')) return faqDatabase.room;
+  if (q.includes('reserve') || q.includes('booking') || q.includes('book')) return faqDatabase.reservation;
+  if (q.includes('food') || q.includes('eat') || q.includes('drink') || q.includes('restaurant')) return faqDatabase.dining;
+  if (q.includes('event') || q.includes('hall') || q.includes('party') || q.includes('wedding')) return faqDatabase.event;
+  if (q.includes('price') || q.includes('cost') || q.includes('rate')) return faqDatabase.pricing;
+  if (q.includes('refund') || q.includes('payment') || q.includes('pay')) return faqDatabase.refund;
+  if (q.includes('contact') || q.includes('support') || q.includes('help')) return faqDatabase.contact;
+  if (q.includes('hour') || q.includes('open')) return faqDatabase.hours;
+  if (q.includes('check in') || q.includes('checkout')) return faqDatabase.checkin;
+
+  return 'I can help with room, reservation, dining and event questions. If your request is more specific or urgent, please speak to customer service.';
+}
+
+function openChat() {
+  if (!chatWidget) return;
+  chatWidget.classList.add('open');
+  chatWidget.setAttribute('aria-hidden', 'false');
+}
+
+function closeChat() {
+  if (!chatWidget) return;
+  chatWidget.classList.remove('open');
+  chatWidget.setAttribute('aria-hidden', 'true');
+}
+
+function escalateToSupport() {
+  const message = encodeURIComponent('Hello Charlington Hotel & Suites, I need immediate assistance from a customer service representative.');
+  window.open(`https://wa.me/2348000000000?text=${message}`, '_blank', 'noopener,noreferrer');
+}
+
+if (faqToggle) {
+  faqToggle.addEventListener('click', () => {
+    if (chatWidget && chatWidget.classList.contains('open')) {
+      closeChat();
+    } else {
+      openChat();
+    }
+  });
+}
+
+if (chatClose) {
+  chatClose.addEventListener('click', closeChat);
+}
+
+function sendQuestion() {
+  if (!chatInput || !chatBody) return;
+
+  const question = chatInput.value.trim();
+  if (!question) return;
+
+  addMessage(question, 'user');
+  chatInput.value = '';
+
+  const answer = getFaqAnswer(question);
+  addMessage(answer, 'bot');
+
+  if (question.toLowerCase().includes('refund') || question.toLowerCase().includes('payment') || question.toLowerCase().includes('pay') || question.toLowerCase().includes('urgent')) {
+    setTimeout(() => {
+      addMessage('This looks like a complex enquiry. I am redirecting you to customer service for immediate attention.', 'bot');
+      setTimeout(escalateToSupport, 700);
+    }, 400);
+  }
+}
+
+if (sendBtn) {
+  sendBtn.addEventListener('click', sendQuestion);
+}
+
+if (chatInput) {
+  chatInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') sendQuestion();
+  });
+}
+
+if (supportBtn) {
+  supportBtn.addEventListener('click', escalateToSupport);
+}
+

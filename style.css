@@ -1,68 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Charlington Hotel & Suites offers refined stays, dining, and event hosting in a luxury setting.">
-  <title>Charlington Hotel & Suites | Stay • Dine • Celebrate</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Charlington Hotel & Suites is a luxury hotel, restaurant, and event venue with secure parking, dependable power, and guest-friendly policies." />
+  <title>Charlington Hotel & Suites | Luxury Stay • Dining • Events</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="topbar">
-    <span>Luxury comfort in the heart of the city</span>
+    <span>Comfort, hospitality and memorable moments</span>
     <a href="#contact">Contact us ↗</a>
   </div>
 
   <header class="header">
-    <a class="brand" href="#home" aria-label="Charlington Hotel home">
-      <span class="monogram">C</span>
+    <a href="#home" class="brand" aria-label="Charlington Hotel home">
+      <span class="logo">C</span>
       <span>
-        <b>CHARLINGTON</b>
+        <strong>CHARLINGTON</strong>
         <small>HOTEL &amp; SUITES</small>
       </span>
     </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
-    <nav id="nav" aria-label="Main navigation">
-      <a href="#rooms">Rooms &amp; Suites</a>
-      <a href="#amenities">Amenities</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#about">About</a>
-      <a class="nav-button" href="#booking">Make an enquiry</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+    <nav class="nav" id="nav">
+      <a href="#rooms">Rooms</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#reviews">Reviews</a>
+      <a href="events.html">Events</a>
+      <a href="about.html">About</a>
+      <a href="#booking" class="btn nav-btn">Book now</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero" id="home">
+  <main id="home">
+    <section class="hero">
       <div class="hero-inner">
         <p class="eyebrow">WELCOME TO CHARLINGTON</p>
-        <h1>Stay in refined<br><em>comfort.</em></h1>
-        <p class="hero-copy">A distinctive destination for restorative stays, elevated dining, and memorable celebrations designed around your every need.</p>
-        <div class="actions">
-          <a class="button gold" href="#booking">Plan your visit <span>→</span></a>
-          <a class="button outline" href="#dining">Explore dining</a>
+        <h1>Stay in refined<br><span>comfort.</span></h1>
+        <p class="hero-copy">A luxury destination for restful stays, great dining, and celebrations designed around your every need.</p>
+        <div class="hero-actions">
+          <a href="#booking" class="btn primary-btn">Plan your visit</a>
+          <a href="#dining" class="btn ghost-btn">Explore dining</a>
         </div>
-        <p class="hero-note">● STAY • DINE • CELEBRATE</p>
+        <div class="hero-note">STAY • DINE • CELEBRATE</div>
       </div>
+
       <div class="hero-panel">
         <div class="panel-card">
           <span>Signature stay</span>
           <strong>From ₦45,000 / night</strong>
-          <small>Executive rooms &amp; luxury suites</small>
+          <small>Rooms, suites and executive stays</small>
         </div>
       </div>
     </section>
 
     <section class="booking" id="booking">
-      <div>
+      <div class="booking-head">
         <p class="eyebrow">PLAN YOUR VISIT</p>
         <h2>How can we host you?</h2>
       </div>
 
       <form id="bookingForm">
-        <label>I'm interested in
+        <label>
+          I’m interested in
           <select id="bookingType">
             <option>Room reservation</option>
             <option>Food or drink order</option>
@@ -70,18 +75,23 @@
             <option>General enquiry</option>
           </select>
         </label>
-        <label>Preferred date
-          <input id="bookingDate" type="date">
+
+        <label>
+          Preferred date
+          <input type="date" id="bookingDate" />
         </label>
-        <label>Your name
-          <input id="guestName" required placeholder="Enter your name">
+
+        <label>
+          Your name
+          <input type="text" id="guestName" placeholder="Enter your name" required />
         </label>
-        <button class="button dark" type="submit">Send enquiry →</button>
+
+        <button type="submit" class="btn primary-btn">Send enquiry</button>
       </form>
       <p class="form-help">Your request opens in WhatsApp for confirmation. Sending an enquiry does not confirm a booking.</p>
     </section>
 
-    <section class="section intro-strip">
+    <section class="prefix-strip">
       <div class="stat">
         <strong>24/7</strong>
         <span>Guest support</span>
@@ -95,8 +105,8 @@
         <span>Guest reviews</span>
       </div>
       <div class="stat">
-        <strong>Indoor</strong>
-        <span>Dining &amp; lounge</span>
+        <strong>Secure</strong>
+        <span>Parking &amp; premises</span>
       </div>
     </section>
 
@@ -104,17 +114,17 @@
       <div class="section-heading">
         <div>
           <p class="eyebrow">REST &amp; RECHARGE</p>
-          <h2>Signature stays,<br><em>beautifully considered.</em></h2>
+          <h2>Signature stays,<br><span>beautifully considered.</span></h2>
         </div>
         <p>From executive getaways to celebratory stays, every detail is designed to feel indulgent, effortless and personal.</p>
       </div>
 
       <div class="cards">
-        <article>
-          <div class="card-image room"><span>ROOMS &amp; SUITES</span></div>
-          <div class="card-copy">
-            <h3>Deluxe King Room</h3>
-            <p>Thoughtful space, elegant finishes and restful comfort for both business and leisure stays.</p>
+        <article class="card">
+          <div class="card-image room"></div>
+          <div class="card-body">
+            <h3>Deluxe Rooms</h3>
+            <p>Thoughtful layouts, elegant design, premium bedding and a restful atmosphere for every guest.</p>
             <div class="card-meta">
               <span>From ₦45,000</span>
               <a href="#booking" data-type="Room reservation">Reserve ↗</a>
@@ -122,11 +132,11 @@
           </div>
         </article>
 
-        <article id="dining">
-          <div class="card-image food"><span>RESTAURANT &amp; BAR</span></div>
-          <div class="card-copy">
-            <h3>Fine dining &amp; moments</h3>
-            <p>Curated meals, signature drinks, and warm hospitality for every occasion and appetite.</p>
+        <article class="card" id="dining">
+          <div class="card-image dining"></div>
+          <div class="card-body">
+            <h3>Fine Dining</h3>
+            <p>Curated meals, signature drinks and warm hospitality for every occasion and appetite.</p>
             <div class="card-meta">
               <span>Meals &amp; drinks</span>
               <a href="#booking" data-type="Food or drink order">Order ↗</a>
@@ -134,11 +144,11 @@
           </div>
         </article>
 
-        <article id="events">
-          <div class="card-image event"><span>EVENTS &amp; CELEBRATIONS</span></div>
-          <div class="card-copy">
-            <h3>Celebrate beautifully</h3>
-            <p>Elegant spaces for weddings, conferences, birthdays, meetings and unforgettable events.</p>
+        <article class="card" id="events">
+          <div class="card-image events"></div>
+          <div class="card-body">
+            <h3>Events &amp; Halls</h3>
+            <p>Elegant spaces for weddings, ceremonies, meetings, birthday celebrations and private gatherings.</p>
             <div class="card-meta">
               <span>Private halls</span>
               <a href="#booking" data-type="Hall or event booking">Enquire ↗</a>
@@ -148,93 +158,87 @@
       </div>
     </section>
 
-    <section class="dining-feature" id="amenities">
-      <div class="dining-photo" role="img" aria-label="Restaurant dining"></div>
-      <div class="dining-copy">
-        <p class="eyebrow">FRESHLY PREPARED • MADE TO ENJOY</p>
-        <h2>Come hungry.<br><em>Leave delighted.</em></h2>
-        <p>From satisfying meals to refreshing drinks and quick bites, our hospitality team is ready to help you discover something memorable.</p>
-        <div class="menu-types">
-          <span>01 <b>Meals</b></span>
-          <span>02 <b>Drinks</b></span>
-          <span>03 <b>Snacks</b></span>
-        </div>
-        <a class="button gold" href="#booking" data-type="Food or drink order">Enquire about food &amp; drinks →</a>
-        <small>Menu items, pricing and availability should be confirmed directly with the hotel.</small>
+    <section class="feature" id="facilities">
+      <div class="feature-image" role="img" aria-label="Luxury restaurant and dining area"></div>
+      <div class="feature-copy">
+        <p class="eyebrow">FACILITIES</p>
+        <h2>Everything your stay needs.</h2>
+        <ul class="facility-list">
+          <li>Security personnel and monitored access</li>
+          <li>Backup generator for uninterrupted power</li>
+          <li>Spacious parking area for guests and visitors</li>
+          <li>Restaurant and bar with tasty meals and drinks</li>
+          <li>Event hall for parties, corporate gatherings and celebrations</li>
+        </ul>
+        <a href="#booking" class="btn primary-btn">Ask about facilities</a>
       </div>
     </section>
 
-    <section class="section gallery-section" id="gallery">
-      <div class="section-heading compact">
-        <div>
-          <p class="eyebrow">LUXURY LIVING</p>
-          <h2>Our atmosphere.</h2>
-        </div>
-      </div>
-
-      <div class="gallery-grid">
-        <div class="gallery-item tall"><img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1000&q=80" alt="Elegant hotel bedroom"></div>
-        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=900&q=80" alt="Hotel restaurant dining area"></div>
-        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=900&q=80" alt="Luxury hotel lounge"></div>
-        <div class="gallery-item wide"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80" alt="Premium hotel event venue"></div>
-      </div>
-    </section>
-
-    <section class="section about" id="about">
-      <div>
-        <p class="eyebrow">THE CHARLINGTON EXPERIENCE</p>
-        <h2>More than a stay.</h2>
-        <p class="about-text">Charlington Hotel &amp; Suites combines gracious hospitality, refined accommodation, exceptional dining and thoughtfully hosted events in one welcoming destination. Tell us about your plans and our team will help craft a seamless experience.</p>
-
-        <div class="values">
-          <div>
-            <span>01</span>
-            <b>Warm hospitality</b>
-            <p>Personal service from first enquiry to final checkout.</p>
-          </div>
-          <div>
-            <span>02</span>
-            <b>Convenience</b>
-            <p>Everything you need in one elegant, easy-to-book destination.</p>
-          </div>
-          <div>
-            <span>03</span>
-            <b>Tailored care</b>
-            <p>Curated help for stays, meals and meaningful events.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="about-art">
-        <div>
-          <span>CHARLINGTON</span>
-          <strong>Make yourself<br>at home.</strong>
-          <small>HOTEL &amp; SUITES</small>
-        </div>
-      </div>
-    </section>
-
-    <section class="section testimonials">
+    <section class="section reviews" id="reviews">
       <div class="section-heading compact">
         <div>
           <p class="eyebrow">GUEST FEEDBACK</p>
-          <h2>What people say.</h2>
+          <h2>Customer reviews and ratings.</h2>
         </div>
       </div>
 
-      <div class="testimonial-grid">
-        <blockquote>
-          “The rooms were elegant, the staff were welcoming, and the service felt genuinely personal from start to finish.”
-          <cite>— Ada O.</cite>
-        </blockquote>
-        <blockquote>
-          “We hosted a small celebration here and everything felt premium, smooth and beautifully organised.”
-          <cite>— Daniel K.</cite>
-        </blockquote>
-        <blockquote>
-          “A perfect mix of comfort, taste and quiet luxury. It felt like a true escape without leaving the city.”
-          <cite>— Sarah M.</cite>
-        </blockquote>
+      <div class="review-grid">
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>“The rooms were elegant, the staff were welcoming, and the service felt genuinely personal from start to finish.”</p>
+          <strong>— Ada O.</strong>
+        </article>
+
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>“We hosted a small celebration here and everything felt premium, smooth and beautifully organized.”</p>
+          <strong>— Daniel K.</strong>
+        </article>
+
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>“A perfect mix of comfort, taste and quiet luxury. It truly felt like an escape without leaving the city.”</p>
+          <strong>— Sarah M.</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="section policies">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">CLEAR POLICIES</p>
+          <h2>Helpful guest information.</h2>
+        </div>
+      </div>
+
+      <div class="policy-grid">
+        <div class="policy-card">
+          <h3>Check-in &amp; Check-out</h3>
+          <p><strong>Check-in:</strong> From 2:00 PM</p>
+          <p><strong>Check-out:</strong> By 12:00 PM</p>
+        </div>
+
+        <div class="policy-card">
+          <h3>Payment Methods</h3>
+          <p>Cash, bank transfer, mobile money, and selected card payments accepted.</p>
+        </div>
+
+        <div class="policy-card">
+          <h3>Cancellation</h3>
+          <p>Bookings can be cancelled according to terms agreed at reservation time. Early notice is encouraged.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-brief">
+      <div>
+        <p class="eyebrow">ABOUT US</p>
+        <h2>A hotel built on warmth, trust and service.</h2>
+        <p>Charlington Hotel &amp; Suites was created to offer guests a place where comfort, hospitality and thoughtful service come together. We believe every visit should feel personal, reassuring and memorable, whether a guest is staying for business, leisure or a special occasion. Our goal is simple: to make every guest feel at home while delivering a refined and professional experience from welcome to checkout.</p>
+      </div>
+      <div class="story-box">
+        <span>OUR STORY</span>
+        <strong>From a simple idea to a trusted hospitality destination.</strong>
       </div>
     </section>
 
@@ -242,35 +246,33 @@
       <p class="eyebrow">WE LOOK FORWARD TO WELCOMING YOU</p>
       <h2>Let’s plan your next visit.</h2>
       <p>Tell us what you need and our team can help with the next steps.</p>
-      <a class="button gold" href="#booking">Start an enquiry →</a>
+      <a href="#booking" class="btn primary-btn">Start an enquiry</a>
     </section>
   </main>
 
   <footer id="contact">
     <div class="footer-main">
-      <a class="brand footer-brand" href="#home">
-        <span class="monogram">C</span>
+      <div class="brand footer-brand">
+        <span class="logo">C</span>
         <span>
-          <b>CHARLINGTON</b>
+          <strong>CHARLINGTON</strong>
           <small>HOTEL &amp; SUITES</small>
         </span>
-      </a>
+      </div>
 
-      <p>Comfort, dining and celebrations — all in one place.</p>
+      <div>
+        <h4>Phone / WhatsApp</h4>
+        <a href="#">Add hotel phone number</a>
+      </div>
 
-      <div class="contact-details">
-        <div>
-          <span>PHONE / WHATSAPP</span>
-          <a id="phoneLink" href="#">Add hotel phone number</a>
-        </div>
-        <div>
-          <span>ADDRESS</span>
-          <p id="hotelAddress">Add hotel address and city</p>
-        </div>
-        <div>
-          <span>EMAIL</span>
-          <a id="emailLink" href="#">Add hotel email</a>
-        </div>
+      <div>
+        <h4>Email</h4>
+        <a href="#">Add hotel email</a>
+      </div>
+
+      <div>
+        <h4>Address</h4>
+        <p>Add hotel address and city</p>
       </div>
     </div>
 
@@ -281,11 +283,31 @@
     </div>
   </footer>
 
+  <button id="faqToggle" class="faq-toggle">Need help?</button>
+
+  <div class="chat-widget" id="chatWidget" aria-live="polite" aria-hidden="true">
+    <div class="chat-header">
+      <span>Charlington Assistant</span>
+      <button id="chatClose" aria-label="Close chat">×</button>
+    </div>
+
+    <div class="chat-body" id="chatBody">
+      <div class="bot-msg">Hi! I can help with rooms, dining, event spaces and reservations. Ask me anything.</div>
+    </div>
+
+    <div class="chat-input-wrap">
+      <input id="chatInput" type="text" placeholder="Type your question..." />
+      <button id="sendBtn">Send</button>
+    </div>
+
+    <div class="chat-actions">
+      <button class="support-btn" id="supportBtn">Talk to customer service</button>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
-
-
 
 
 

@@ -1,78 +1,126 @@
-/* Before publishing, replace these placeholders with the hotel's real details. */
-const HOTEL_WHATSAPP = "2348000000000";
-const HOTEL_PHONE = "";
-const HOTEL_EMAIL = "";
-const HOTEL_ADDRESS = "Add hotel address and city";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Charlington Hotel & Suites</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <span>Warm hospitality, trusted service</span>
+    <a href="index.html#contact">Contact us ↗</a>
+  </div>
 
-document.getElementById('year').textContent = new Date().getFullYear();
+  <header class="header">
+    <a href="index.html" class="brand" aria-label="Charlington Hotel home">
+      <span class="logo">C</span>
+      <span>
+        <strong>CHARLINGTON</strong>
+        <small>HOTEL &amp; SUITES</small>
+      </span>
+    </a>
 
-const toggle = document.getElementById('menuToggle');
-const nav = document.getElementById('nav');
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
 
-if (toggle && nav) {
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.textContent = open ? '✕' : '☰';
-  });
+    <nav class="nav" id="nav">
+      <a href="index.html#rooms">Rooms</a>
+      <a href="index.html#facilities">Facilities</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="events.html">Events</a>
+      <a href="about.html" class="active">About</a>
+      <a href="index.html#booking" class="btn nav-btn">Book now</a>
+    </nav>
+  </header>
 
-  nav.querySelectorAll('a').forEach((a) => {
-    a.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = '☰';
-    });
-  });
-}
+  <main>
+    <section class="page-hero about-hero">
+      <div class="page-hero-content">
+        <p class="eyebrow">ABOUT US</p>
+        <h1>A story rooted in hospitality.</h1>
+      </div>
+    </section>
 
-const date = document.getElementById('bookingDate');
-if (date) {
-  const now = new Date();
-  date.min = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().split('T')[0];
-}
+    <section class="section about-page">
+      <div>
+        <p class="eyebrow">OUR STORY</p>
+        <h2>Built to make every guest feel at home.</h2>
+        <p>Charlington Hotel &amp; Suites was created to offer more than a place to sleep. It was built around a simple idea: every guest should feel welcomed, cared for and confident that their stay is in good hands. From the beginning, we focused on affordable comfort, professional service, and warm hospitality that leaves a lasting impression.</p>
+        <p>Today, the hotel stands as a place where guests rest comfortably, staff serve with pride, and families, business travellers and event hosts all find the right environment for their needs. We are committed to making each experience smooth, calm and memorable.</p>
+      </div>
 
-document.getElementById('bookingForm')?.addEventListener('submit', (e) => {
-  e.preventDefault();
+      <div class="story-box">
+        <span>OUR PROMISE</span>
+        <strong>To provide comfort, care and service that guests remember.</strong>
+      </div>
+    </section>
 
-  const name = document.getElementById('guestName').value.trim();
-  const type = document.getElementById('bookingType').value;
-  const preferredDate = date?.value || 'Not specified';
+    <section class="section policies">
+      <div class="section-heading compact">
+        <div>
+          <p class="eyebrow">GUEST POLICY</p>
+          <h2>Simple, clear and guest-friendly.</h2>
+        </div>
+      </div>
 
-  if (!name) {
-    return alert('Please enter your name.');
-  }
+      <div class="policy-grid">
+        <div class="policy-card">
+          <h3>Check-in &amp; Check-out</h3>
+          <p><strong>Check-in:</strong> 2:00 PM</p>
+          <p><strong>Check-out:</strong> 12:00 PM</p>
+        </div>
 
-  if (HOTEL_WHATSAPP === '2348000000000') {
-    return alert('The hotel WhatsApp number is not configured yet. Update HOTEL_WHATSAPP in script.js before publishing.');
-  }
+        <div class="policy-card">
+          <h3>Payments</h3>
+          <p>We accept cash, bank transfer, mobile money and selected card payments to make reservations easier.</p>
+        </div>
 
-  const message = `Hello Charlington Hotel & Suites,\n\nMy name is ${name}.\nI would like to enquire about: ${type}.\nPreferred date: ${preferredDate}.\n\nPlease let me know availability, pricing and next steps. I understand this is an enquiry, not a confirmed booking.`;
+        <div class="policy-card">
+          <h3>Cancellation</h3>
+          <p>Cancellation terms vary by reservation type, but early notice is always appreciated so we can assist effectively.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  window.open(`https://wa.me/${HOTEL_WHATSAPP}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
-});
+  <footer id="contact">
+    <div class="footer-main">
+      <div class="brand footer-brand">
+        <span class="logo">C</span>
+        <span>
+          <strong>CHARLINGTON</strong>
+          <small>HOTEL &amp; SUITES</small>
+        </span>
+      </div>
 
-document.querySelectorAll('[data-type]').forEach((a) => {
-  a.addEventListener('click', () => {
-    const target = document.getElementById('bookingType');
-    if (target) target.value = a.dataset.type;
-  });
-});
+      <div>
+        <h4>Phone / WhatsApp</h4>
+        <a href="#">Add hotel phone number</a>
+      </div>
 
-if (HOTEL_PHONE) {
-  const a = document.getElementById('phoneLink');
-  if (a) {
-    a.textContent = HOTEL_PHONE;
-    a.href = `tel:${HOTEL_PHONE.replace(/[^\d+]/g, '')}`;
-  }
-}
+      <div>
+        <h4>Email</h4>
+        <a href="#">Add hotel email</a>
+      </div>
 
-if (HOTEL_EMAIL) {
-  const a = document.getElementById('emailLink');
-  if (a) {
-    a.textContent = HOTEL_EMAIL;
-    a.href = `mailto:${HOTEL_EMAIL}`;
-  }
-}
+      <div>
+        <h4>Address</h4>
+        <p>Add hotel address and city</p>
+      </div>
+    </div>
 
-document.getElementById('hotelAddress').textContent = HOTEL_ADDRESS;
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Charlington Hotel &amp; Suites</span>
+      <span>Enquiries do not confirm a reservation.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
 
