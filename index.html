@@ -1,21 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Discover rooms, dining and event hosting at Charlington Hotel & Suites.">
-<title>Charlington Hotel & Suites | Stay • Dine • Celebrate</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
-</head><body>
-<div class="topbar"><span>Comfort, hospitality and memorable moments</span><a href="#contact">Contact us ↗</a></div>
-<header class="header"><a class="brand" href="#home"><span class="monogram">C</span><span><b>CHARLINGTON</b><small>HOTEL &amp; SUITES</small></span></a><button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button><nav id="nav"><a href="#rooms">Rooms &amp; Suites</a><a href="#dining">Dining</a><a href="#events">Events &amp; Halls</a><a href="#about">About</a><a class="nav-button" href="#booking">Make an enquiry</a></nav></header>
-<main>
-<section class="hero" id="home"><div class="hero-inner"><p class="eyebrow">WELCOME TO CHARLINGTON</p><h1>Your comfort.<br><em>Our commitment.</em></h1><p class="hero-copy">A welcoming place to rest, enjoy delicious meals, host special occasions and make every visit count.</p><div class="actions"><a class="button gold" href="#booking">Plan your visit <span>→</span></a><a class="button outline" href="#dining">Explore dining</a></div><p class="hero-note">● &nbsp;STAY &nbsp; • &nbsp; DINE &nbsp; • &nbsp; CELEBRATE</p></div></section>
-<section class="booking" id="booking"><div><p class="eyebrow">PLAN YOUR VISIT</p><h2>How can we host you?</h2></div><form id="bookingForm"><label>I'm interested in<select id="bookingType"><option>Room reservation</option><option>Food or drink order</option><option>Hall or event booking</option><option>General enquiry</option></select></label><label>Preferred date<input id="bookingDate" type="date"></label><label>Your name<input id="guestName" required placeholder="Enter your name"></label><button class="button dark" type="submit">Send enquiry →</button></form><p class="form-help">Your request opens in WhatsApp for confirmation. Sending an enquiry does not confirm a booking.</p></section>
-<section class="section" id="rooms"><div class="section-heading"><div><p class="eyebrow">REST &amp; RECHARGE</p><h2>A stay that feels <em>right.</em></h2></div><p>Whether you're visiting for work, a getaway or a special occasion, let us help you settle in comfortably.</p></div><div class="cards"><article><div class="card-image room"><span>ROOMS &amp; SUITES</span></div><div class="card-copy"><h3>Find your comfort</h3><p>Ask about room options, amenities, rates and availability for your dates.</p><a href="#booking" data-type="Room reservation">Enquire about rooms ↗</a></div></article><article id="dining"><div class="card-image food"><span>RESTAURANT &amp; BAR</span></div><div class="card-copy"><h3>Good food, good moments</h3><p>Ask our team about meals, snacks, drinks and available ordering options.</p><a href="#booking" data-type="Food or drink order">Ask about the menu ↗</a></div></article><article id="events"><div class="card-image event"><span>EVENTS &amp; CELEBRATIONS</span></div><div class="card-copy"><h3>Make it an occasion</h3><p>Ask about hall availability for meetings, parties and celebrations.</p><a href="#booking" data-type="Hall or event booking">Enquire about halls ↗</a></div></article></div></section>
-<section class="dining-feature"><div class="dining-photo" role="img" aria-label="Restaurant dining"></div><div class="dining-copy"><p class="eyebrow">FRESHLY PREPARED • MADE TO ENJOY</p><h2>Come hungry.<br><em>Leave happy.</em></h2><p>From satisfying meals to refreshing drinks and quick snacks, our team is ready to help you find something you'll enjoy.</p><div class="menu-types"><span>01 <b>Meals</b></span><span>02 <b>Drinks</b></span><span>03 <b>Snacks</b></span></div><a class="button gold" href="#booking" data-type="Food or drink order">Enquire about food &amp; drinks →</a><small>Menu items, prices and availability should be added after confirmation by the hotel.</small></div></section>
-<section class="section about" id="about"><div><p class="eyebrow">THE CHARLINGTON EXPERIENCE</p><h2>More than a place to stay.</h2><p class="about-text">Charlington Hotel &amp; Suites brings accommodation, dining and event hosting together in one welcoming destination. Contact our team to plan a stay, ask about meals or discuss your next event.</p><div class="values"><div><span>01</span><b>Warm hospitality</b><p>Friendly service from enquiry to checkout.</p></div><div><span>02</span><b>Convenience</b><p>One place to ask about rooms, food and events.</p></div><div><span>03</span><b>Personal service</b><p>Our team can help plan your visit.</p></div></div></div><div class="about-art"><div><span>CHARLINGTON</span><strong>Make yourself<br>at home.</strong><small>HOTEL &amp; SUITES</small></div></div></section>
-<section class="cta"><p class="eyebrow">WE LOOK FORWARD TO WELCOMING YOU</p><h2>Let's plan your next visit.</h2><p>Tell us what you need and our team can help with the next steps.</p><a class="button gold" href="#booking">Start an enquiry →</a></section>
-</main>
-<footer id="contact"><div class="footer-main"><a class="brand footer-brand" href="#home"><span class="monogram">C</span><span><b>CHARLINGTON</b><small>HOTEL &amp; SUITES</small></span></a><p>Comfort, dining and celebrations — all in one place.</p><div class="contact-details"><div><span>PHONE / WHATSAPP</span><a id="phoneLink" href="#">Add hotel phone number</a></div><div><span>ADDRESS</span><p id="hotelAddress">Add hotel address and city</p></div><div><span>EMAIL</span><a id="emailLink" href="#">Add hotel email</a></div></div></div><div class="footer-bottom"><span>© <span id="year"></span> Charlington Hotel &amp; Suites</span><span>Enquiries do not confirm a reservation.</span><a href="#home">Back to top ↑</a></div></footer>
-<script src="script.js"></script></body></html>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Charlington Hotel & Suites — rooms, dining, events, and hospitality."
+  />
+  <title>Charlington Hotel & Suites | Stay • Dine • Celebrate</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <span>Comfort, hospitality and memorable moments</span>
+    <a href="#contact">Contact us ↗</a>
+  </div>
+
+  <header class="header">
+    <a class="brand" href="#home" aria-label="Charlington Home">
+      <span class="monogram">C</span>
+      <span>
+        <b>CHARLINGTON</b>
+        <small>HOTEL &amp; SUITES</small>
+      </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav id="nav" aria-label="Main navigation">
+      <a href="#rooms">Rooms &amp; Suites</a>
+      <a href="#dining">Dining</a>
+      <a href="#events">Events &amp; Halls</a>
+      <a href="#about">About</a>
+      <a class="nav-button" href="#booking">Make an enquiry</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <p class="eyebrow">WELCOME TO CHARLINGTON</p>
+        <h1>
+          Your comfort.<br />
+          <em>Our commitment.</em>
+        </h1>
+        <p class="hero-copy">
+          A welcoming place to rest, enjoy delicious meals, host special occasions
+          and make every visit count.
+        </p>
+
+        <div class="actions">
+          <a class="button gold" href="#booking">Plan your visit <span>→</span></a>
+          <a class="button outline" href="#dining">Explore dining</a>
+        </div>
+
+        <p class="hero-note">● &nbsp;STAY &nbsp; • &nbsp; DINE &nbsp; • &nbsp; CELEBRATE</p>
+      </div>
+    </section>
+
+    <section class="booking" id="booking">
+      <div>
+        <p class="eyebrow">PLAN YOUR VISIT</p>
+        <h2>How can we host you?</h2>
+      </div>
+
+      <form id="bookingForm">
+        <label>
+          I'm interested in
+          <select id="bookingType">
+            <option>Room reservation</option>
+            <option>Food or drink order</option>
+            <option>Hall or event booking</option>
+            <option>General enquiry</option>
+          </select>
+        </label>
+
+        <label>
+          Preferred date
+          <input id="bookingDate" type="date" />
+        </label>
+
+        <label>
+          Your name
+          <input id="guestName" required placeholder="Enter your name" />
+        </label>
+
+        <button class="button dark" type="submit">Send enquiry →</button>
+      </form>
+
+      <p class="form-help">
+        Your request opens in WhatsApp for confirmation. Sending an enquiry does not
+        confirm a booking.
+      </p>
+    </section>
+
+    <section class="section" id="rooms">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">REST &amp; RECHARGE</p>
+          <h2>A stay that feels <em>right.</em></h2>
+        </div>
+        <p>
+          Whether you're visiting for work, a getaway or a special occasion, let us
+          help you settle in comfortably.
+        </p>
+      </div>
+
+      <div class="cards">
+        <article>
+          <div class="card-image room">
+            <span>ROOMS &amp; SUITES</span>
+          </div>
+          <div class="card-copy">
+            <h3>Find your comfort</h3>
+            <p>
+              Ask about room options, amenities, rates and availability for your dates.
+            </p>
+            <a href="#booking" data-type="Room reservation">Enquire about rooms ↗</a>
+          </div>
+        </article>
+
+        <article id="dining">
+          <div class="card-image food">
+            <span>RESTAURANT &amp; BAR</span>
+          </div>
+          <div class="card-copy">
+            <h3>Good food, good moments</h3>
+            <p>
+              Ask our team about meals, snacks, drinks and available ordering options.
+            </p>
+            <a href="#booking" data-type="Food or drink order">Ask about the menu ↗</a>
+          </div>
+        </article>
+
+        <article id="events">
+          <div class="card-image event">
+            <span>EVENTS &amp; CELEBRATIONS</span>
+          </div>
+          <div class="card-copy">
+            <h3>Make it an occasion</h3>
+            <p>
+              Ask about hall availability for meetings, parties and celebrations.
+            </p>
+            <a href="#booking" data-type="Hall or event booking">Enquire about halls ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="dining-feature">
+      <div class="dining-photo" role="img" aria-label="Restaurant dining"></div>
+
+      <div class="dining-copy">
+        <p class="eyebrow">FRESHLY PREPARED • MADE TO ENJOY</p>
+        <h2>Come hungry.<br /><em>Leave happy.</em></h2>
+        <p>
+          From satisfying meals to refreshing drinks and quick snacks, our team is
+          ready to help you find something you'll enjoy.
+        </p>
+
+        <div class="menu-types">
+          <span>01 <b>Meals</b></span>
+          <span>02 <b>Drinks</b></span>
+          <span>03 <b>Snacks</b></span>
+        </div>
+
+        <a class="button gold" href="#booking" data-type="Food or drink order">
+          Enquire about food &amp; drinks →
+        </a>
+
+        <small>
+          Menu items, prices and availability should be added after confirmation by the hotel.
+        </small>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div>
+        <p class="eyebrow">THE CHARLINGTON EXPERIENCE</p>
+        <h2>More than a place to stay.</h2>
+        <p class="about-text">
+          Charlington Hotel &amp; Suites brings accommodation, dining and event hosting
+          together in one welcoming destination. Contact our team to plan a stay, ask
+          about meals or discuss your next event.
+        </p>
+
+        <div class="values">
+          <div>
+            <span>01</span>
+            <b>Warm hospitality</b>
+            <p>Friendly service from enquiry to checkout.</p>
+          </div>
+
+          <div>
+            <span>02</span>
+            <b>Convenience</b>
+            <p>One place to ask about rooms, food and events.</p>
+          </div>
+
+          <div>
+            <span>03</span>
+            <b>Personal service</b>
+            <p>Our team can help plan your visit.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-art">
+        <div>
+          <span>CHARLINGTON</span>
+          <strong>Make yourself<br />at home.</strong>
+          <small>HOTEL &amp; SUITES</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <p class="eyebrow">WE LOOK FORWARD TO WELCOMING YOU</p>
+      <h2>Let's plan your next visit.</h2>
+      <p>Tell us what you need and our team can help with the next steps.</p>
+      <a class="button gold" href="#booking">Start an enquiry →</a>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-main">
+      <a class="brand footer-brand" href="#home">
+        <span class="monogram">C</span>
+        <span>
+          <b>CHARLINGTON</b>
+          <small>HOTEL &amp; SUITES</small>
+        </span>
+      </a>
+
+      <p>Comfort, dining and celebrations — all in one place.</p>
+
+      <div class="contact-details">
+        <div>
+          <span>PHONE / WHATSAPP</span>
+          <a id="phoneLink" href="#">Add hotel phone number</a>
+        </div>
+
+        <div>
+          <span>ADDRESS</span>
+          <p id="hotelAddress">Add hotel address and city</p>
+        </div>
+
+        <div>
+          <span>EMAIL</span>
+          <a id="emailLink" href="#">Add hotel email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Charlington Hotel &amp; Suites</span>
+      <span>Enquiries do not confirm a reservation.</span>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
