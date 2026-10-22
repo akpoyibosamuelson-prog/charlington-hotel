@@ -1,3 +1,8 @@
+/* Before publishing, replace these placeholders with the hotel's real details. */
+const HOTEL_WHATSAPP = "2348130000000";
+const HOTEL_PHONE = "+234 813 000 0000";
+const HOTEL_EMAIL = "reservations@charlingtonhotel.com";
+const HOTEL_ADDRESS = "28 Marina Road, Victoria Island, Lagos, Nigeria";
 const HOTEL_WHATSAPP = "2348035550198";
 const HOTEL_PHONE = "+234 803 555 0198";
 const HOTEL_EMAIL = "reservations@charlingtonhotel.com";
@@ -24,6 +29,14 @@ if (toggle && nav) {
   nav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", closeMenu);
   });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.textContent = "☰";
+    }
+  });
 }
 
 const date = document.getElementById("bookingDate");
@@ -41,8 +54,10 @@ if (bookingForm) {
   bookingForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const name = document.getElementById("guestName").value.trim();
-    const type = document.getElementById("bookingType").value;
+    const nameField = document.getElementById("guestName");
+    const typeField = document.getElementById("bookingType");
+    const name = nameField ? nameField.value.trim() : "";
+    const type = typeField ? typeField.value : "General enquiry";
     const preferredDate = date ? date.value || "Not specified" : "Not specified";
 
     if (!name) {
@@ -57,11 +72,8 @@ if (bookingForm) {
       `Preferred date: ${preferredDate}.\n\n` +
       `Please let me know availability, pricing and next steps. I understand this is an enquiry, not a confirmed booking.`;
 
-    window.open(
-      `https://wa.me/${HOTEL_WHATSAPP}?text=${encodeURIComponent(message)}`,
-      "_blank",
-      "noopener,noreferrer"
-    );
+    const whatsappUrl = `https://wa.me/${HOTEL_WHATSAPP}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   });
 }
 
@@ -74,20 +86,16 @@ document.querySelectorAll("[data-type]").forEach((link) => {
   });
 });
 
-if (HOTEL_PHONE) {
-  const phoneLink = document.getElementById("phoneLink");
-  if (phoneLink) {
-    phoneLink.textContent = HOTEL_PHONE;
-    phoneLink.href = `tel:${HOTEL_PHONE.replace(/[^\d+]/g, "")}`;
-  }
+const phoneLink = document.getElementById("phoneLink");
+if (phoneLink) {
+  phoneLink.textContent = HOTEL_PHONE;
+  phoneLink.href = `tel:${HOTEL_PHONE.replace(/[^\d+]/g, "")}`;
 }
 
-if (HOTEL_EMAIL) {
-  const emailLink = document.getElementById("emailLink");
-  if (emailLink) {
-    emailLink.textContent = HOTEL_EMAIL;
-    emailLink.href = `mailto:${HOTEL_EMAIL}`;
-  }
+const emailLink = document.getElementById("emailLink");
+if (emailLink) {
+  emailLink.textContent = HOTEL_EMAIL;
+  emailLink.href = `mailto:${HOTEL_EMAIL}`;
 }
 
 const hotelAddress = document.getElementById("hotelAddress");
