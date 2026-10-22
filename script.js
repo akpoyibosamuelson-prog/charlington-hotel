@@ -1,8 +1,7 @@
-/* Before publishing, replace these placeholders with the hotel's real details. */
-const HOTEL_WHATSAPP = "2348000000000"; // e.g. 2348012345678
-const HOTEL_PHONE = ""; // e.g. +234 801 234 5678
-const HOTEL_EMAIL = ""; // official email
-const HOTEL_ADDRESS = "Add hotel address and city";
+const HOTEL_WHATSAPP = "2348035550198";
+const HOTEL_PHONE = "+234 803 555 0198";
+const HOTEL_EMAIL = "reservations@charlingtonhotel.com";
+const HOTEL_ADDRESS = "12 Victoria Crescent, Lekki Phase 1, Lagos, Nigeria";
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -10,6 +9,12 @@ const toggle = document.getElementById("menuToggle");
 const nav = document.getElementById("nav");
 
 if (toggle && nav) {
+  const closeMenu = () => {
+    nav.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.textContent = "☰";
+  };
+
   toggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("open");
     toggle.setAttribute("aria-expanded", String(isOpen));
@@ -17,11 +22,7 @@ if (toggle && nav) {
   });
 
   nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
-      toggle.textContent = "☰";
-    });
+    link.addEventListener("click", closeMenu);
   });
 }
 
@@ -46,13 +47,6 @@ if (bookingForm) {
 
     if (!name) {
       alert("Please enter your name.");
-      return;
-    }
-
-    if (HOTEL_WHATSAPP === "2348000000000") {
-      alert(
-        "The hotel WhatsApp number is not configured yet. Update HOTEL_WHATSAPP in script.js before publishing."
-      );
       return;
     }
 
