@@ -3,6 +3,10 @@ const HOTEL_WHATSAPP = "2348130000000";
 const HOTEL_PHONE = "+234 813 000 0000";
 const HOTEL_EMAIL = "reservations@charlingtonhotel.com";
 const HOTEL_ADDRESS = "28 Marina Road, Victoria Island, Lagos, Nigeria";
+const HOTEL_WHATSAPP = "2348035550198";
+const HOTEL_PHONE = "+234 803 555 0198";
+const HOTEL_EMAIL = "reservations@charlingtonhotel.com";
+const HOTEL_ADDRESS = "12 Victoria Crescent, Lekki Phase 1, Lagos, Nigeria";
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -10,6 +14,12 @@ const toggle = document.getElementById("menuToggle");
 const nav = document.getElementById("nav");
 
 if (toggle && nav) {
+  const closeMenu = () => {
+    nav.classList.remove("open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.textContent = "☰";
+  };
+
   toggle.addEventListener("click", () => {
     const isOpen = nav.classList.toggle("open");
     toggle.setAttribute("aria-expanded", String(isOpen));
@@ -17,11 +27,7 @@ if (toggle && nav) {
   });
 
   nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
-      toggle.textContent = "☰";
-    });
+    link.addEventListener("click", closeMenu);
   });
 
   document.addEventListener("keydown", (event) => {
