@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charlington Staff Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: "DM Sans", Arial, sans-serif;
+        background: #f7f4ed;
+        color: #202b28;
+      }
+
+      .dashboard-shell {
+        max-width: 1200px;
+        margin: 32px auto;
+        padding: 0 20px 40px;
+      }
+
+      .dashboard-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 24px;
+      }
+
+      .dashboard-header h1 {
+        font: 600 42px/1.1 "Playfair Display", Georgia, serif;
+        margin: 0;
+      }
+
+      .dashboard-header a {
+        color: #263f35;
+        font-weight: 700;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        margin-bottom: 24px;
+      }
+
+      .stat {
+        background: white;
+        border: 1px solid #e5e0d5;
+        padding: 22px 18px;
+      }
+
+      .stat span {
+        display: block;
+        font-size: 10px;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #68716d;
+        margin-bottom: 12px;
+      }
+
+      .stat strong {
+        font-size: 32px;
+        font-family: "Playfair Display", Georgia, serif;
+      }
+
+      .panel-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 22px;
+      }
+
+      .panel {
+        background: white;
+        border: 1px solid #e5e0d5;
+        padding: 24px;
+      }
+
+      .panel h2 {
+        margin: 0 0 20px;
+        font: 600 24px/1.2 "Playfair Display", Georgia, serif;
+      }
+
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .table th,
+      .table td {
+        text-align: left;
+        padding: 12px 8px;
+        border-bottom: 1px solid #eee9df;
+        font-size: 12px;
+      }
+
+      .table th {
+        color: #68716d;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 10px;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 5px 8px;
+        border-radius: 999px;
+        font-size: 10px;
+        font-weight: 700;
+      }
+
+      .badge.on {
+        background: #eaf5ea;
+        color: #1d5d39;
+      }
+
+      .badge.alert {
+        background: #fff1d6;
+        color: #8a6510;
+      }
+
+      .task-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .task-list li {
+        padding: 12px 0;
+        border-bottom: 1px solid #eee9df;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-size: 13px;
+      }
+
+      @media (max-width: 760px) {
+        .stats,
+        .panel-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .dashboard-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dashboard-shell">
+      <header class="dashboard-header">
+        <h1>Staff &amp; Management Dashboard</h1>
+        <a href="index.html">← Back to website</a>
+      </header>
+
+      <section class="stats">
+        <div class="stat">
+          <span>Rooms occupied</span>
+          <strong>68%</strong>
+        </div>
+        <div class="stat">
+          <span>Today’s enquiries</span>
+          <strong>24</strong>
+        </div>
+        <div class="stat">
+          <span>Restaurant bookings</span>
+          <strong>13</strong>
+        </div>
+        <div class="stat">
+          <span>Events scheduled</span>
+          <strong>5</strong>
+        </div>
+      </section>
+
+      <section class="panel-grid">
+        <div class="panel">
+          <h2>Operations overview</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Department</th>
+                <th>Staff on duty</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Front Desk</td>
+                <td>4</td>
+                <td><span class="badge on">Active</span></td>
+              </tr>
+              <tr>
+                <td>Housekeeping</td>
+                <td>7</td>
+                <td><span class="badge on">Active</span></td>
+              </tr>
+              <tr>
+                <td>Restaurant</td>
+                <td>5</td>
+                <td><span class="badge alert">Busy</span></td>
+              </tr>
+              <tr>
+                <td>Events Team</td>
+                <td>3</td>
+                <td><span class="badge on">On track</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel">
+          <h2>Priority tasks</h2>
+          <ul class="task-list">
+            <li><span>Confirm VIP room check-ins</span><strong>Today</strong></li>
+            <li><span>Review event hall availability</span><strong>Today</strong></li>
+            <li><span>Update restaurant stock list</span><strong>Tomorrow</strong></li>
+            <li><span>Verify cleaner roster</span><strong>Tomorrow</strong></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
